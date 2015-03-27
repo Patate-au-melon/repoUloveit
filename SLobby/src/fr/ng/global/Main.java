@@ -16,7 +16,7 @@ public class Main extends JavaPlugin {
 
 	public void onEnable() {
 		try {
-			//on espere que sa va marher
+			//il faut y suppr
 			slot = configlobby.getInt("slot") - 1;
 		} catch (Exception e) {
 			e.printStackTrace();
