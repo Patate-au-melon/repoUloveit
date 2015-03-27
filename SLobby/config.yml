@@ -1,0 +1,6 @@
+slot: 4
+#Permissions: ng.armor.chesOr, ng.armor.chesFer, ng.armor.chesDiams et ng.armor.chesCha pour les materieux
+#Pour les pieces d'armure : ng.armor.chesOr, ng.armor.casOr, ng.armor.pantOr et ng.armor.bootOr
+#Pour les commandes: ng.armor.admin.cmd
+#Autres : ng.armor.admin.clear pour ne pas se faire clear l'armure et ng.armor.admin.drop pour
+#pouvoir drop l'armure

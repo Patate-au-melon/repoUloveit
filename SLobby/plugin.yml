@@ -1,0 +1,7 @@
+name: Lobby-Armor
+main: fr.ng.global.Main
+version: 1.0
+author: Saulunaire
+commands:
+  armor:
+    description: Gestion des armures
