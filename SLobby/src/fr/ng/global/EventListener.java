@@ -3,7 +3,6 @@ package fr.ng.global;
 import java.util.ArrayList;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -15,7 +14,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 public class EventListener implements Listener {
 	String ng = GlobalMethods.ng;
@@ -106,11 +104,7 @@ public class EventListener implements Listener {
 				Material current = e.getCurrentItem().getType();
 				ItemStack item = e.getCurrentItem();
 				Player p = (Player) e.getWhoClicked();
-				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
-						.getItemMeta();
-				armorMeta.setColor(Color.RED);
-				item.setItemMeta(armorMeta);
-				GlobalMethods.equipColoredArmor(current, p, item.getItemMeta());
+				GlobalMethods.equipColoredArmor(current, p, item);
 				e.setCancelled(true);
 			} else if (e.getInventory().getName()
 					.equalsIgnoreCase(ChatColor.RED + "ERREUR")) {

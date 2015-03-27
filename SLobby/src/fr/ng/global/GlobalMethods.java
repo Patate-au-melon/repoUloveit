@@ -253,52 +253,51 @@ public class GlobalMethods {
 			} else {
 				item = errorItem;
 			}
-			inv.setItem(43, item);
-			if (p.hasPermission("ng.armor.bootLeaRed")) {
-				item = transItem(
-						new ItemStack(Material.CHAINMAIL_BOOTS),
-						ChatColor.GRAY + "Bottes en mailles",
-						ChatColor.YELLOW
-								+ "Cliquez pour mettre des bottes en mailles !",
-						p);
+			inv.setItem(9, item);
+			if (p.hasPermission("ng.armor.chesLeaRed")) {
+				item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
+						ChatColor.GRAY + "Plastron rouge", ChatColor.YELLOW
+								+ "Cliquez pour mettre un plastron rouge !", p);
 				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
 						.getItemMeta();
-				armorMeta.setColor(Color.AQUA);
+				armorMeta.setColor(Color.RED);
 				item.setItemMeta(armorMeta);
 			} else {
 				item = errorItem;
 			}
-			inv.setItem(43, item);
-			if (p.hasPermission("ng.armor.bootLeaRed")) {
-				item = transItem(
-						new ItemStack(Material.CHAINMAIL_BOOTS),
-						ChatColor.GRAY + "Bottes en mailles",
-						ChatColor.YELLOW
-								+ "Cliquez pour mettre des bottes en mailles !",
+			inv.setItem(18, item);
+			if (p.hasPermission("ng.armor.pantLeaRed")) {
+				item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
+						ChatColor.GRAY + "Pantalon rouge", ChatColor.YELLOW
+								+ "Cliquez pour mettre un pantalon rouge ! !",
 						p);
 				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
 						.getItemMeta();
-				armorMeta.setColor(Color.AQUA);
+				armorMeta.setColor(Color.RED);
 				item.setItemMeta(armorMeta);
 			} else {
 				item = errorItem;
 			}
-			inv.setItem(43, item);
+			inv.setItem(27, item);
 			if (p.hasPermission("ng.armor.bootLeaRed")) {
-				item = transItem(
-						new ItemStack(Material.CHAINMAIL_BOOTS),
-						ChatColor.GRAY + "Bottes en mailles",
-						ChatColor.YELLOW
-								+ "Cliquez pour mettre des bottes en mailles !",
-						p);
+				item = transItem(new ItemStack(Material.LEATHER_BOOTS),
+						ChatColor.GRAY + "Bottes rouges", ChatColor.YELLOW
+								+ "Cliquez pour mettre des bottes rouges !", p);
 				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
 						.getItemMeta();
-				armorMeta.setColor(Color.AQUA);
+				armorMeta.setColor(Color.RED);
 				item.setItemMeta(armorMeta);
 			} else {
 				item = errorItem;
 			}
-			inv.setItem(43, item);
+			inv.setItem(36, item);
+			// tnt
+			ItemStack destroy;
+			destroy = transItem(new ItemStack(Material.TNT), ChatColor.GRAY
+					+ "Armure en air", ChatColor.YELLOW
+					+ "Cliquez pour réinitialiser l'armure", p);
+			inv.setItem(47, destroy);
+			// inv error
 		} else {
 			inv = Bukkit.createInventory(null, InventoryType.HOPPER,
 					ChatColor.RED + "ERREUR");
@@ -322,10 +321,9 @@ public class GlobalMethods {
 		return itemNS;
 	}
 
-	public static void equipColoredArmor(Material mat, Player p,
-			ItemMeta itemMeta) {
+	public static void equipColoredArmor(Material mat, Player p, ItemStack item2) {
 		ItemStack item = new ItemStack(mat);
-		item.setItemMeta(itemMeta);
+		item.setItemMeta(item2.getItemMeta());
 		if (mat == Material.LEATHER_HELMET) {
 			p.getInventory().setHelmet(item);
 		} else if (mat == Material.LEATHER_CHESTPLATE) {
