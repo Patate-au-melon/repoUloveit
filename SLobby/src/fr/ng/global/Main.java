@@ -16,7 +16,6 @@ public class Main extends JavaPlugin {
 
 	public void onEnable() {
 		try {
-			//il faut y suppr
 			slot = configlobby.getInt("slot") - 1;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -30,7 +29,7 @@ public class Main extends JavaPlugin {
 	}
 
 	public void onDisable() {
-		configlobby.set("slot", slot+1);
+		configlobby.set("slot", slot + 1);
 		try {
 			configlobby.save(conf);
 		} catch (IOException e) {
@@ -41,8 +40,8 @@ public class Main extends JavaPlugin {
 	public static int getSlot() {
 		return slot;
 	}
-	
-	public static void setSlot(int nbr){
+
+	public static void setSlot(int nbr) {
 		slot = nbr;
 	}
 }
