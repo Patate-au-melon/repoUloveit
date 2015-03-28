@@ -108,7 +108,7 @@ public class GlobalMethods {
 			} else {
 				chesDiams = errorItem;
 			}
-			inv.setItem(21, chesDiams);
+			inv.setItem(23, chesDiams);
 			ItemStack casDiams = null;
 			if (p.hasPermission("ng.armor.casDiams")) {
 				casDiams = transItem(new ItemStack(Material.DIAMOND_HELMET),
@@ -118,7 +118,7 @@ public class GlobalMethods {
 			} else {
 				casDiams = errorItem;
 			}
-			inv.setItem(12, casDiams);
+			inv.setItem(14, casDiams);
 			if (p.hasPermission("ng.armor.pantDiams")) {
 				item = transItem(
 						new ItemStack(Material.DIAMOND_LEGGINGS),
@@ -129,7 +129,7 @@ public class GlobalMethods {
 			} else {
 				item = errorItem;
 			}
-			inv.setItem(30, item);
+			inv.setItem(32, item);
 			ItemStack bootDiams = null;
 			if (p.hasPermission("ng.armor.bootDiams")) {
 				bootDiams = transItem(
@@ -141,7 +141,7 @@ public class GlobalMethods {
 			} else {
 				bootDiams = errorItem;
 			}
-			inv.setItem(39, bootDiams);
+			inv.setItem(41, bootDiams);
 			// or
 			ItemStack chesOr;
 			if (p.hasPermission("ng.armor.chesOr")) {
@@ -151,7 +151,7 @@ public class GlobalMethods {
 			} else {
 				chesOr = errorItem;
 			}
-			inv.setItem(23, chesOr);
+			inv.setItem(21, chesOr);
 			ItemStack casOr = null;
 			if (p.hasPermission("ng.armor.casOr")) {
 				casOr = transItem(new ItemStack(Material.GOLD_HELMET),
@@ -160,7 +160,7 @@ public class GlobalMethods {
 			} else {
 				casOr = errorItem;
 			}
-			inv.setItem(14, casOr);
+			inv.setItem(12, casOr);
 			if (p.hasPermission("ng.armor.pantOr")) {
 				item = transItem(new ItemStack(Material.GOLD_LEGGINGS),
 						ChatColor.GRAY + "Pantalon en or", ChatColor.YELLOW
@@ -168,7 +168,7 @@ public class GlobalMethods {
 			} else {
 				item = errorItem;
 			}
-			inv.setItem(32, item);
+			inv.setItem(30, item);
 			ItemStack bootOr = null;
 			if (p.hasPermission("ng.armor.bootOr")) {
 				bootOr = transItem(new ItemStack(Material.GOLD_BOOTS),
@@ -177,7 +177,7 @@ public class GlobalMethods {
 			} else {
 				bootOr = errorItem;
 			}
-			inv.setItem(41, bootOr);
+			inv.setItem(39, bootOr);
 			// chained
 			ItemStack chesCha;
 			if (p.hasPermission("ng.armor.chesCha")) {
@@ -252,7 +252,7 @@ public class GlobalMethods {
 			} else {
 				item = errorItem;
 			}
-			inv.setItem(9, item);
+			inv.setItem(17, item);
 			if (p.hasPermission("ng.armor.chesLeaRed")) {
 				item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
 						ChatColor.GRAY + "Plastron rouge", ChatColor.YELLOW
@@ -264,7 +264,7 @@ public class GlobalMethods {
 			} else {
 				item = errorItem;
 			}
-			inv.setItem(18, item);
+			inv.setItem(26, item);
 			if (p.hasPermission("ng.armor.pantLeaRed")) {
 				item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
 						ChatColor.GRAY + "Pantalon rouge", ChatColor.YELLOW
@@ -277,7 +277,7 @@ public class GlobalMethods {
 			} else {
 				item = errorItem;
 			}
-			inv.setItem(27, item);
+			inv.setItem(35, item);
 			if (p.hasPermission("ng.armor.bootLeaRed")) {
 				item = transItem(new ItemStack(Material.LEATHER_BOOTS),
 						ChatColor.GRAY + "Bottes rouges", ChatColor.YELLOW
@@ -289,13 +289,747 @@ public class GlobalMethods {
 			} else {
 				item = errorItem;
 			}
+			inv.setItem(44, item);
+			// yellow
+			if (p.hasPermission("ng.armor.casLeaYel")) {
+				item = transItem(new ItemStack(Material.LEATHER_HELMET),
+						ChatColor.GRAY + "Casque en cuir jaune",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un casque jaune !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.YELLOW);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(11, item);
+			if (p.hasPermission("ng.armor.chesLeaYel")) {
+				item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
+						ChatColor.GRAY + "Plastron jaune", ChatColor.YELLOW
+								+ "Cliquez pour mettre un plastron jaune !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.YELLOW);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(20, item);
+			if (p.hasPermission("ng.armor.pantLeaYel")) {
+				item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
+						ChatColor.GRAY + "Pantalon jaune", ChatColor.YELLOW
+								+ "Cliquez pour mettre un pantalon jaune !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.YELLOW);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(29, item);
+			if (p.hasPermission("ng.armor.bootLeaYel")) {
+				item = transItem(new ItemStack(Material.LEATHER_BOOTS),
+						ChatColor.GRAY + "Bottes jaunes", ChatColor.YELLOW
+								+ "Cliquez pour mettre des bottes jaunes !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.YELLOW);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(38, item);
+			// bleu
+			if (p.hasPermission("ng.armor.casLeaBlue")) {
+				item = transItem(new ItemStack(Material.LEATHER_HELMET),
+						ChatColor.GRAY + "Casque en cuir bleu",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un casque bleu !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.BLUE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(13, item);
+			if (p.hasPermission("ng.armor.chesLeaBlue")) {
+				item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
+						ChatColor.GRAY + "Plastron bleu", ChatColor.YELLOW
+								+ "Cliquez pour mettre un plastron bleu !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.BLUE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(22, item);
+			if (p.hasPermission("ng.armor.pantLeaBlue")) {
+				item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
+						ChatColor.GRAY + "Pantalon bleu", ChatColor.YELLOW
+								+ "Cliquez pour mettre un pantalon bleu !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.BLUE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(31, item);
+			if (p.hasPermission("ng.armor.bootLeaBlue")) {
+				item = transItem(new ItemStack(Material.LEATHER_BOOTS),
+						ChatColor.GRAY + "Bottes bleus", ChatColor.YELLOW
+								+ "Cliquez pour mettre des bottes bleues !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.BLUE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(40, item);
+			// green
+			if (p.hasPermission("ng.armor.casLeaGre")) {
+				item = transItem(new ItemStack(Material.LEATHER_HELMET),
+						ChatColor.GRAY + "Casque en cuir vert",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un casque vert !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.GREEN);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(15, item);
+			if (p.hasPermission("ng.armor.chesLeaGre")) {
+				item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
+						ChatColor.GRAY + "Plastron vert", ChatColor.YELLOW
+								+ "Cliquez pour mettre un plastron vert !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.GREEN);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(24, item);
+			if (p.hasPermission("ng.armor.pantLeaGre")) {
+				item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
+						ChatColor.GRAY + "Pantalon vert", ChatColor.YELLOW
+								+ "Cliquez pour mettre un pantalon vert !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.GREEN);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(33, item);
+			if (p.hasPermission("ng.armor.bootLeaGre")) {
+				item = transItem(new ItemStack(Material.LEATHER_BOOTS),
+						ChatColor.GRAY + "Bottes vertes", ChatColor.YELLOW
+								+ "Cliquez pour mettre des bottes vertes !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.GREEN);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(42, item);
+			// normal
+			if (p.hasPermission("ng.armor.casLeaNor")) {
+				item = transItem(new ItemStack(Material.LEATHER_HELMET),
+						ChatColor.GRAY + "Casque en cuir normal",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un casque normal !", p);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(9, item);
+			if (p.hasPermission("ng.armor.chesLeaNor")) {
+				item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
+						ChatColor.GRAY + "Plastron normal", ChatColor.YELLOW
+								+ "Cliquez pour mettre un plastron normal !", p);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(18, item);
+			if (p.hasPermission("ng.armor.pantLeaNor")) {
+				item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
+						ChatColor.GRAY + "Pantalon normal", ChatColor.YELLOW
+								+ "Cliquez pour mettre un pantalon normal ! !",
+						p);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(27, item);
+			if (p.hasPermission("ng.armor.bootLeaNor")) {
+				item = transItem(new ItemStack(Material.LEATHER_BOOTS),
+						ChatColor.GRAY + "Bottes normals", ChatColor.YELLOW
+								+ "Cliquez pour mettre des bottes normales !",
+						p);
+			} else {
+				item = errorItem;
+			}
 			inv.setItem(36, item);
 			// tnt
 			ItemStack destroy;
 			destroy = transItem(new ItemStack(Material.TNT), ChatColor.GRAY
 					+ "Supprimer l'armure", ChatColor.YELLOW
 					+ "Cliquez pour réinitialiser l'armure", p);
-			inv.setItem(47, destroy);
+			inv.setItem(49, destroy);
+			// arrow 2
+			ItemStack arrow;
+			arrow = transItem(new ItemStack(Material.ARROW), ChatColor.GRAY
+					+ "Page 2", ChatColor.YELLOW
+					+ "Cliquez pour aller à la page 2", p);
+			inv.setItem(51, arrow);
+			// arrow
+			arrow = transItem(new ItemStack(Material.ARROW), ChatColor.GRAY
+					+ "Retour", ChatColor.YELLOW
+					+ "Cliquez pour aller en arrière", p);
+			inv.setItem(47, arrow);
+			// inv cuir 2
+		} else if (invName.equalsIgnoreCase("Cuir2")) {
+			inv = Bukkit.createInventory(null, 54, ChatColor.RED + "Armures"
+					+ ChatColor.DARK_GRAY + " en cuir");
+			// blanc
+			if (p.hasPermission("ng.armor.casLeaWhi")) {
+				item = transItem(new ItemStack(Material.LEATHER_HELMET),
+						ChatColor.GRAY + "Casque en cuir blanc",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un casque blanc !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.WHITE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(17, item);
+			if (p.hasPermission("ng.armor.chesLeaWhi")) {
+				item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
+						ChatColor.GRAY + "Plastron blanc", ChatColor.YELLOW
+								+ "Cliquez pour mettre un plastron blanc !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.WHITE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(26, item);
+			if (p.hasPermission("ng.armor.pantLeaWhi")) {
+				item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
+						ChatColor.GRAY + "Pantalon blanc", ChatColor.YELLOW
+								+ "Cliquez pour mettre un pantalon blanc ! !",
+						p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.WHITE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(35, item);
+			if (p.hasPermission("ng.armor.bootLeaWhi")) {
+				item = transItem(new ItemStack(Material.LEATHER_BOOTS),
+						ChatColor.GRAY + "Bottes blanches", ChatColor.YELLOW
+								+ "Cliquez pour mettre des bottes blanches !",
+						p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.WHITE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(44, item);
+			// violet
+			if (p.hasPermission("ng.armor.casLeaVio")) {
+				item = transItem(new ItemStack(Material.LEATHER_HELMET),
+						ChatColor.GRAY + "Casque en cuir violet",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un casque violet !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.PURPLE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(11, item);
+			if (p.hasPermission("ng.armor.chesLeaVio")) {
+				item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
+						ChatColor.GRAY + "Plastron violet", ChatColor.YELLOW
+								+ "Cliquez pour mettre un plastron violet !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.PURPLE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(20, item);
+			if (p.hasPermission("ng.armor.pantLeaVio")) {
+				item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
+						ChatColor.GRAY + "Pantalon violet", ChatColor.YELLOW
+								+ "Cliquez pour mettre un pantalon violet !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.PURPLE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(29, item);
+			if (p.hasPermission("ng.armor.bootLeaVio")) {
+				item = transItem(new ItemStack(Material.LEATHER_BOOTS),
+						ChatColor.GRAY + "Bottes violettes", ChatColor.YELLOW
+								+ "Cliquez pour mettre des bottes violettes !",
+						p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.PURPLE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(38, item);
+			// noir
+			if (p.hasPermission("ng.armor.casLeaBla")) {
+				item = transItem(new ItemStack(Material.LEATHER_HELMET),
+						ChatColor.GRAY + "Casque en cuir noir",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un casque noir !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.BLACK);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(13, item);
+			if (p.hasPermission("ng.armor.chesLeaBla")) {
+				item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
+						ChatColor.GRAY + "Plastron noir", ChatColor.YELLOW
+								+ "Cliquez pour mettre un plastron noir !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.BLACK);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(22, item);
+			if (p.hasPermission("ng.armor.pantLeaBla")) {
+				item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
+						ChatColor.GRAY + "Pantalon noir", ChatColor.YELLOW
+								+ "Cliquez pour mettre un pantalon noir !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.BLACK);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(31, item);
+			if (p.hasPermission("ng.armor.bootLeaBla")) {
+				item = transItem(new ItemStack(Material.LEATHER_BOOTS),
+						ChatColor.GRAY + "Bottes noires", ChatColor.YELLOW
+								+ "Cliquez pour mettre des bottes noires !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.BLACK);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(40, item);
+			// orange
+			if (p.hasPermission("ng.armor.casLeaOra")) {
+				item = transItem(new ItemStack(Material.LEATHER_HELMET),
+						ChatColor.GRAY + "Casque en cuir orange",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un casque orange !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.ORANGE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(15, item);
+			if (p.hasPermission("ng.armor.chesLeaOra")) {
+				item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
+						ChatColor.GRAY + "Plastron orange", ChatColor.YELLOW
+								+ "Cliquez pour mettre un plastron orange !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.ORANGE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(24, item);
+			if (p.hasPermission("ng.armor.pantLeaOra")) {
+				item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
+						ChatColor.GRAY + "Pantalon orange", ChatColor.YELLOW
+								+ "Cliquez pour mettre un pantalon orange !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.ORANGE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(33, item);
+			if (p.hasPermission("ng.armor.bootLeaOra")) {
+				item = transItem(new ItemStack(Material.LEATHER_BOOTS),
+						ChatColor.GRAY + "Bottes oranges", ChatColor.YELLOW
+								+ "Cliquez pour mettre des bottes oranges !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.ORANGE);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(42, item);
+			// rose
+			if (p.hasPermission("ng.armor.casLeaRos")) {
+				item = transItem(new ItemStack(Material.LEATHER_HELMET),
+						ChatColor.GRAY + "Casque en cuir rose",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un casque rose !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.FUCHSIA);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(9, item);
+			if (p.hasPermission("ng.armor.chesLeaRos")) {
+				item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
+						ChatColor.GRAY + "Plastron rose", ChatColor.YELLOW
+								+ "Cliquez pour mettre un plastron rose !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.FUCHSIA);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(18, item);
+			if (p.hasPermission("ng.armor.pantLeaRos")) {
+				item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
+						ChatColor.GRAY + "Pantalon rose", ChatColor.YELLOW
+								+ "Cliquez pour mettre un pantalon rose ! !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.FUCHSIA);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(27, item);
+			if (p.hasPermission("ng.armor.bootLeaRos")) {
+				item = transItem(new ItemStack(Material.LEATHER_BOOTS),
+						ChatColor.GRAY + "Bottes roses", ChatColor.YELLOW
+								+ "Cliquez pour mettre des bottes roses !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.FUCHSIA);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(36, item);
+			// tnt
+			ItemStack destroy;
+			destroy = transItem(new ItemStack(Material.TNT), ChatColor.GRAY
+					+ "Supprimer l'armure", ChatColor.YELLOW
+					+ "Cliquez pour réinitialiser l'armure", p);
+			inv.setItem(49, destroy);
+			// arrow 1
+			ItemStack arrow;
+			arrow = transItem(new ItemStack(Material.ARROW), ChatColor.GRAY
+					+ "Page 1", ChatColor.YELLOW
+					+ "Cliquez pour aller à la page 1", p);
+			inv.setItem(47, arrow);
+			// arrow 3
+			arrow = transItem(new ItemStack(Material.ARROW), ChatColor.GRAY
+					+ "Page 3", ChatColor.YELLOW
+					+ "Cliquez pour aller à la page 3", p);
+			inv.setItem(51, arrow);
+			// inv cuir 3
+		} else if (invName.equalsIgnoreCase("Cuir3")) {
+			inv = Bukkit.createInventory(null, 54, ChatColor.RED + "Armures"
+					+ ChatColor.DARK_GRAY + " en cuir");
+			// marron
+			if (p.hasPermission("ng.armor.casLeaMar")) {
+				item = transItem(new ItemStack(Material.LEATHER_HELMET),
+						ChatColor.GRAY + "Casque en cuir marron",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un casque marron !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.MAROON);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(17, item);
+			if (p.hasPermission("ng.armor.chesLeaMar")) {
+				item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
+						ChatColor.GRAY + "Plastron marron", ChatColor.YELLOW
+								+ "Cliquez pour mettre un plastron marron !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.MAROON);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(26, item);
+			if (p.hasPermission("ng.armor.pantLeaMar")) {
+				item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
+						ChatColor.GRAY + "Pantalon marron", ChatColor.YELLOW
+								+ "Cliquez pour mettre un pantalon marron ! !",
+						p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.MAROON);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(35, item);
+			if (p.hasPermission("ng.armor.bootLeaMar")) {
+				item = transItem(new ItemStack(Material.LEATHER_BOOTS),
+						ChatColor.GRAY + "Bottes marron", ChatColor.YELLOW
+								+ "Cliquez pour mettre des bottes marron !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.MAROON);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(44, item);
+			// gris
+			if (p.hasPermission("ng.armor.casLeaGri")) {
+				item = transItem(new ItemStack(Material.LEATHER_HELMET),
+						ChatColor.GRAY + "Casque en cuir gris",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un casque gris !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.GRAY);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(11, item);
+			if (p.hasPermission("ng.armor.chesLeaGri")) {
+				item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
+						ChatColor.GRAY + "Plastron gris", ChatColor.YELLOW
+								+ "Cliquez pour mettre un plastron gris !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.GRAY);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(20, item);
+			if (p.hasPermission("ng.armor.pantLeaGri")) {
+				item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
+						ChatColor.GRAY + "Pantalon gris", ChatColor.YELLOW
+								+ "Cliquez pour mettre un pantalon gris !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.GRAY);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(29, item);
+			if (p.hasPermission("ng.armor.bootLeaGri")) {
+				item = transItem(new ItemStack(Material.LEATHER_BOOTS),
+						ChatColor.GRAY + "Bottes gris", ChatColor.YELLOW
+								+ "Cliquez pour mettre des bottes gris !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.GRAY);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(38, item);
+			// vert clair
+			if (p.hasPermission("ng.armor.casLeaLim")) {
+				item = transItem(new ItemStack(Material.LEATHER_HELMET),
+						ChatColor.GRAY + "Casque en cuir vert clair",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un casque vert clair !",
+						p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.LIME);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(13, item);
+			if (p.hasPermission("ng.armor.chesLeaLim")) {
+				item = transItem(
+						new ItemStack(Material.LEATHER_CHESTPLATE),
+						ChatColor.GRAY + "Plastron vert clair",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un plastron vert clair !",
+						p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.LIME);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(22, item);
+			if (p.hasPermission("ng.armor.pantLeaLim")) {
+				item = transItem(
+						new ItemStack(Material.LEATHER_LEGGINGS),
+						ChatColor.GRAY + "Pantalon vert clair",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un pantalon vert clair !",
+						p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.LIME);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(31, item);
+			if (p.hasPermission("ng.armor.bootLeaLim")) {
+				item = transItem(
+						new ItemStack(Material.LEATHER_BOOTS),
+						ChatColor.GRAY + "Bottes vert clair",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre des bottes vert clair !",
+						p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.LIME);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(40, item);
+			// cyan
+			if (p.hasPermission("ng.armor.casLeaCya")) {
+				item = transItem(new ItemStack(Material.LEATHER_HELMET),
+						ChatColor.GRAY + "Casque en cuir cyan",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un casque cyan !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.AQUA);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(15, item);
+			if (p.hasPermission("ng.armor.chesLeaCya")) {
+				item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
+						ChatColor.GRAY + "Plastron cyan", ChatColor.YELLOW
+								+ "Cliquez pour mettre un plastron cyan !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.AQUA);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(24, item);
+			if (p.hasPermission("ng.armor.pantLeaCya")) {
+				item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
+						ChatColor.GRAY + "Pantalon cyan", ChatColor.YELLOW
+								+ "Cliquez pour mettre un pantalon cyan !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.AQUA);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(33, item);
+			if (p.hasPermission("ng.armor.bootLeaCya")) {
+				item = transItem(new ItemStack(Material.LEATHER_BOOTS),
+						ChatColor.GRAY + "Bottes cyans", ChatColor.YELLOW
+								+ "Cliquez pour mettre des bottes cyan !", p);
+				LeatherArmorMeta armorMeta = (LeatherArmorMeta) item
+						.getItemMeta();
+				armorMeta.setColor(Color.AQUA);
+				item.setItemMeta(armorMeta);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(42, item);
+			// multi-color
+			if (p.hasPermission("ng.armor.casLeaRai")) {
+				item = transItem(new ItemStack(Material.LEATHER_HELMET),
+						ChatColor.GRAY + "Casque en cuir rainbow",
+						ChatColor.YELLOW
+								+ "Cliquez pour mettre un casque rainbow !", p);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(9, item);
+			if (p.hasPermission("ng.armor.chesLeaRai")) {
+				item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
+						ChatColor.GRAY + "Plastron rainbow", ChatColor.YELLOW
+								+ "Cliquez pour mettre un plastron rainbow !",
+						p);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(18, item);
+			if (p.hasPermission("ng.armor.pantLeaRai")) {
+				item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
+						ChatColor.GRAY + "Pantalon rainbow", ChatColor.YELLOW
+								+ "Cliquez pour mettre un pantalon rainbow !",
+						p);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(27, item);
+			if (p.hasPermission("ng.armor.bootLeaRai")) {
+				item = transItem(new ItemStack(Material.LEATHER_BOOTS),
+						ChatColor.GRAY + "Bottes rainbow", ChatColor.YELLOW
+								+ "Cliquez pour mettre des bottes rainbow !", p);
+			} else {
+				item = errorItem;
+			}
+			inv.setItem(36, item);
+			// tnt
+			ItemStack destroy;
+			destroy = transItem(new ItemStack(Material.TNT), ChatColor.GRAY
+					+ "Supprimer l'armure", ChatColor.YELLOW
+					+ "Cliquez pour réinitialiser l'armure", p);
+			inv.setItem(49, destroy);
+			// arrow 2
+			ItemStack arrow;
+			arrow = transItem(new ItemStack(Material.ARROW), ChatColor.GRAY
+					+ "Page 1", ChatColor.YELLOW
+					+ "Cliquez pour aller à la page 1", p);
+			inv.setItem(47, arrow);
 			// inv error
 		} else {
 			inv = Bukkit.createInventory(null, InventoryType.HOPPER,

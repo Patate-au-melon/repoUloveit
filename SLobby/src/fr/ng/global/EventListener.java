@@ -67,13 +67,17 @@ public class EventListener implements Listener {
 					.equalsIgnoreCase(
 							ChatColor.RED + "Garde" + ChatColor.WHITE + "-"
 									+ ChatColor.DARK_GRAY + "Robe")) {
-				e.setCancelled(true);
-				Material current = e.getCurrentItem().getType();
-				Player p = (Player) e.getWhoClicked();
-				if (current == Material.IRON_CHESTPLATE) {
-					GlobalMethods.openInv(p, "Métaux");
-				} else if (current == Material.LEATHER_CHESTPLATE) {
-					GlobalMethods.openInv(p, "Cuir");
+				try {
+					Material current = e.getCurrentItem().getType();
+					Player p = (Player) e.getWhoClicked();
+					if (current == Material.IRON_CHESTPLATE) {
+						GlobalMethods.openInv(p, "Métaux");
+					} else if (current == Material.LEATHER_CHESTPLATE) {
+						GlobalMethods.openInv(p, "Cuir");
+					}
+				} catch (NullPointerException ee) {
+				} finally {
+					e.setCancelled(true);
 				}
 			} else if (e
 					.getInventory()
@@ -81,31 +85,63 @@ public class EventListener implements Listener {
 					.equalsIgnoreCase(
 							ChatColor.RED + "Autres" + ChatColor.DARK_GRAY
 									+ " armures")) {
-				Material current = e.getCurrentItem().getType();
-				Player p = (Player) e.getWhoClicked();
-				if (current == Material.ARROW) {
-					GlobalMethods.openInv(p, "Princ");
-				} else if (current == Material.TNT) {
-					ItemStack itemAir = new ItemStack(Material.AIR);
-					p.getInventory().setBoots(itemAir);
-					p.getInventory().setChestplate(itemAir);
-					p.getInventory().setLeggings(itemAir);
-					p.getInventory().setHelmet(itemAir);
-				} else {
-					GlobalMethods.equipArmor(current, p);
+				try {
+					Material current = e.getCurrentItem().getType();
+					Player p = (Player) e.getWhoClicked();
+					if (current == Material.ARROW) {
+						GlobalMethods.openInv(p, "Princ");
+					} else if (current == Material.TNT) {
+						ItemStack itemAir = new ItemStack(Material.AIR);
+						p.getInventory().setBoots(itemAir);
+						p.getInventory().setChestplate(itemAir);
+						p.getInventory().setLeggings(itemAir);
+						p.getInventory().setHelmet(itemAir);
+					} else {
+						GlobalMethods.equipArmor(current, p);
+					}
+				} catch (NullPointerException ee) {
+				} finally {
+					e.setCancelled(true);
 				}
-				e.setCancelled(true);
 			} else if (e
 					.getInventory()
 					.getName()
 					.equalsIgnoreCase(
 							ChatColor.RED + "Armures" + ChatColor.DARK_GRAY
 									+ " en cuir")) {
-				Material current = e.getCurrentItem().getType();
-				ItemStack item = e.getCurrentItem();
-				Player p = (Player) e.getWhoClicked();
-				GlobalMethods.equipColoredArmor(current, p, item);
-				e.setCancelled(true);
+				try {
+					Material current = e.getCurrentItem().getType();
+					ItemStack item = e.getCurrentItem();
+					Player p = (Player) e.getWhoClicked();
+					if (item.getItemMeta().getDisplayName()
+							.equalsIgnoreCase(ChatColor.GRAY + "Page 1")) {
+						GlobalMethods.openInv(p, "Cuir");
+					} else if (item.getItemMeta().getDisplayName()
+							.equalsIgnoreCase(ChatColor.GRAY + "Page 2")) {
+						GlobalMethods.openInv(p, "Cuir2");
+					} else if (item.getItemMeta().getDisplayName()
+							.equalsIgnoreCase(ChatColor.GRAY + "Page 3")) {
+						GlobalMethods.openInv(p, "Cuir3");
+					} else if (item.getItemMeta().getDisplayName()
+							.equalsIgnoreCase(ChatColor.GRAY + "Retour")) {
+						GlobalMethods.openInv(p, "Princ");
+					} else if (item
+							.getItemMeta()
+							.getDisplayName()
+							.equalsIgnoreCase(
+									ChatColor.GRAY + "Supprimer l'armure")) {
+						ItemStack itemAir = new ItemStack(Material.AIR);
+						p.getInventory().setBoots(itemAir);
+						p.getInventory().setChestplate(itemAir);
+						p.getInventory().setLeggings(itemAir);
+						p.getInventory().setHelmet(itemAir);
+					} else {
+						GlobalMethods.equipColoredArmor(current, p, item);
+					}
+				} catch (NullPointerException ee) {
+				} finally {
+					e.setCancelled(true);
+				}
 			} else if (e.getInventory().getName()
 					.equalsIgnoreCase(ChatColor.RED + "ERREUR")) {
 				e.setCancelled(true);
