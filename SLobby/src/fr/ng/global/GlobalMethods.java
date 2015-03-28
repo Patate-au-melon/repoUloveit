@@ -232,14 +232,13 @@ public class GlobalMethods {
 			// tnt
 			ItemStack destroy;
 			destroy = transItem(new ItemStack(Material.TNT), ChatColor.GRAY
-					+ "Armure en air", ChatColor.YELLOW
+					+ "Supprimer l'armure", ChatColor.YELLOW
 					+ "Cliquez pour réinitialiser l'armure", p);
 			inv.setItem(47, destroy);
 			// inv cuir
 		} else if (invName.equalsIgnoreCase("Cuir")) {
-			inv = Bukkit.createInventory(null, InventoryType.CHEST,
-					ChatColor.RED + "Armures" + ChatColor.DARK_GRAY
-							+ " en cuir");
+			inv = Bukkit.createInventory(null, 54, ChatColor.RED + "Armures"
+					+ ChatColor.DARK_GRAY + " en cuir");
 			// red
 			if (p.hasPermission("ng.armor.casLeaRed")) {
 				item = transItem(new ItemStack(Material.LEATHER_HELMET),
@@ -294,7 +293,7 @@ public class GlobalMethods {
 			// tnt
 			ItemStack destroy;
 			destroy = transItem(new ItemStack(Material.TNT), ChatColor.GRAY
-					+ "Armure en air", ChatColor.YELLOW
+					+ "Supprimer l'armure", ChatColor.YELLOW
 					+ "Cliquez pour réinitialiser l'armure", p);
 			inv.setItem(47, destroy);
 			// inv error
