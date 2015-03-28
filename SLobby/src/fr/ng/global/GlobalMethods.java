@@ -1027,8 +1027,8 @@ public class GlobalMethods {
 			// arrow 2
 			ItemStack arrow;
 			arrow = transItem(new ItemStack(Material.ARROW), ChatColor.GRAY
-					+ "Page 1", ChatColor.YELLOW
-					+ "Cliquez pour aller à la page 1", p);
+					+ "Page 2", ChatColor.YELLOW
+					+ "Cliquez pour aller à la page 2", p);
 			inv.setItem(47, arrow);
 			// inv error
 		} else {
