@@ -1056,6 +1056,9 @@ public class GlobalMethods {
 
 	public static void equipColoredArmor(Material mat, Player p, ItemStack item2) {
 		ItemStack item = new ItemStack(mat);
+		ItemMeta meta = item2.getItemMeta();
+		meta.setLore(new ArrayList<String>());
+		item2.setItemMeta(meta);
 		item.setItemMeta(item2.getItemMeta());
 		if (mat == Material.LEATHER_HELMET) {
 			p.getInventory().setHelmet(item);
