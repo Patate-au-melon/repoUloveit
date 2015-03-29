@@ -3,7 +3,9 @@ package fr.ng.global;
 import java.util.ArrayList;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -14,6 +16,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import fr.ng.apis.Colorizer;
 
 public class EventListener implements Listener {
 	String ng = GlobalMethods.ng;
@@ -55,6 +59,7 @@ public class EventListener implements Listener {
 		Material mat = p.getItemInHand().getType();
 		if (mat == Material.ARMOR_STAND) {
 			GlobalMethods.openInv(p, "Princ");
+			p.playSound(p.getLocation(), Sound.CLICK, 1, 1);
 			e.setCancelled(true);
 		}
 	}
@@ -72,8 +77,10 @@ public class EventListener implements Listener {
 					Player p = (Player) e.getWhoClicked();
 					if (current == Material.IRON_CHESTPLATE) {
 						GlobalMethods.openInv(p, "Métaux");
+						p.playSound(p.getLocation(), Sound.CLICK, 1, 1);
 					} else if (current == Material.LEATHER_CHESTPLATE) {
 						GlobalMethods.openInv(p, "Cuir");
+						p.playSound(p.getLocation(), Sound.CLICK, 1, 1);
 					}
 				} catch (NullPointerException ee) {
 				} finally {
@@ -96,8 +103,10 @@ public class EventListener implements Listener {
 						p.getInventory().setChestplate(itemAir);
 						p.getInventory().setLeggings(itemAir);
 						p.getInventory().setHelmet(itemAir);
+						p.playSound(p.getLocation(), Sound.EXPLODE, 1, 1);
 					} else {
 						GlobalMethods.equipArmor(current, p);
+						p.playSound(p.getLocation(), Sound.SPLASH, 1, 1);
 					}
 				} catch (NullPointerException ee) {
 				} finally {
@@ -116,15 +125,19 @@ public class EventListener implements Listener {
 					if (item.getItemMeta().getDisplayName()
 							.equalsIgnoreCase(ChatColor.GRAY + "Page 1")) {
 						GlobalMethods.openInv(p, "Cuir");
+						p.playSound(p.getLocation(), Sound.CLICK, 1, 1);
 					} else if (item.getItemMeta().getDisplayName()
 							.equalsIgnoreCase(ChatColor.GRAY + "Page 2")) {
 						GlobalMethods.openInv(p, "Cuir2");
+						p.playSound(p.getLocation(), Sound.CLICK, 1, 1);
 					} else if (item.getItemMeta().getDisplayName()
 							.equalsIgnoreCase(ChatColor.GRAY + "Page 3")) {
 						GlobalMethods.openInv(p, "Cuir3");
+						p.playSound(p.getLocation(), Sound.CLICK, 1, 1);
 					} else if (item.getItemMeta().getDisplayName()
 							.equalsIgnoreCase(ChatColor.GRAY + "Retour")) {
 						GlobalMethods.openInv(p, "Princ");
+						p.playSound(p.getLocation(), Sound.CLICK, 1, 1);
 					} else if (item
 							.getItemMeta()
 							.getDisplayName()
@@ -135,8 +148,20 @@ public class EventListener implements Listener {
 						p.getInventory().setChestplate(itemAir);
 						p.getInventory().setLeggings(itemAir);
 						p.getInventory().setHelmet(itemAir);
+						p.playSound(p.getLocation(), Sound.EXPLODE, 1, 1);
+					} else if (item.getItemMeta().getDisplayName()
+							.contains("Rainbow")) {
+						long lg = 20;
+						long lg2 = 69;
+						GlobalMethods.equipColoredArmor(current, p, item);
+						Colorizer.armorRandomColorChange(main, p, lg, lg2,
+								true, Color.BLACK, Color.WHITE, Color.FUCHSIA,
+								Color.RED, Color.YELLOW, Color.BLUE,
+								Color.GREEN);
+						p.playSound(p.getLocation(), Sound.SPLASH, 1, 1);
 					} else {
 						GlobalMethods.equipColoredArmor(current, p, item);
+						p.playSound(p.getLocation(), Sound.SPLASH, 1, 1);
 					}
 				} catch (NullPointerException ee) {
 				} finally {
@@ -144,6 +169,9 @@ public class EventListener implements Listener {
 				}
 			} else if (e.getInventory().getName()
 					.equalsIgnoreCase(ChatColor.RED + "ERREUR")) {
+				((Player) e.getWhoClicked()).playSound(
+						((Player) e.getWhoClicked()).getLocation(),
+						Sound.ENDERMAN_SCREAM, 1, 1);
 				e.setCancelled(true);
 
 			}
