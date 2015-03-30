@@ -163,8 +163,6 @@ public class EventListener implements Listener {
 					} else if (item.getItemMeta().getDisplayName()
 							.contains("rainbow")) {
 						// à faire !!!
-						GlobalMethods.equipColoredArmor(current, p, item);
-						p.playSound(p.getLocation(), Sound.ANVIL_BREAK, 1, 1);
 					} else {
 						GlobalMethods.equipColoredArmor(current, p, item);
 						p.playSound(p.getLocation(), Sound.SPLASH, 1, 1);

@@ -196,38 +196,22 @@ public class Cuir3 extends Inventaire {
 		}
 		inv.setItem(42, item);
 		// multi-color
-		if (p.hasPermission("ng.armor.casLeaRai")) {
-			item = transItem(new ItemStack(Material.LEATHER_HELMET),
-					ChatColor.GRAY + "Casque en cuir rainbow", ChatColor.YELLOW
-							+ "Cliquez pour mettre un casque rainbow !", p);
-		} else {
-			item = errorItem;
-		}
-		inv.setItem(9, item);
-		if (p.hasPermission("ng.armor.chesLeaRai")) {
+		if (p.hasPermission("ng.armor.armTechn")) {
 			item = transItem(new ItemStack(Material.LEATHER_CHESTPLATE),
-					ChatColor.GRAY + "Plastron rainbow", ChatColor.YELLOW
-							+ "Cliquez pour mettre un plastron rainbow !", p);
+					ChatColor.RED + "A" + ChatColor.BLUE + "r"
+							+ ChatColor.YELLOW + "m" + ChatColor.GREEN + "u"
+							+ ChatColor.GOLD + "r" + ChatColor.AQUA + "e "
+							+ ChatColor.LIGHT_PURPLE + "t"
+							+ ChatColor.DARK_BLUE + "e" + ChatColor.WHITE + "c"
+							+ ChatColor.BLACK + "h" + ChatColor.DARK_PURPLE
+							+ "n" + ChatColor.GRAY + "i" + ChatColor.GOLD + ""
+							+ ChatColor.BOLD + "color", ChatColor.GOLD
+							+ "Cliquez pour mettre une armure technicolor !!!",
+					p);
 		} else {
 			item = errorItem;
 		}
 		inv.setItem(18, item);
-		if (p.hasPermission("ng.armor.pantLeaRai")) {
-			item = transItem(new ItemStack(Material.LEATHER_LEGGINGS),
-					ChatColor.GRAY + "Pantalon rainbow", ChatColor.YELLOW
-							+ "Cliquez pour mettre un pantalon rainbow !", p);
-		} else {
-			item = errorItem;
-		}
-		inv.setItem(27, item);
-		if (p.hasPermission("ng.armor.bootLeaRai")) {
-			item = transItem(new ItemStack(Material.LEATHER_BOOTS),
-					ChatColor.GRAY + "Bottes rainbow", ChatColor.YELLOW
-							+ "Cliquez pour mettre des bottes rainbow !", p);
-		} else {
-			item = errorItem;
-		}
-		inv.setItem(36, item);
 		// tnt
 		ItemStack destroy;
 		destroy = transItem(new ItemStack(Material.TNT), ChatColor.GRAY

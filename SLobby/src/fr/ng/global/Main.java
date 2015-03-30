@@ -26,6 +26,8 @@ public class Main extends JavaPlugin {
 		getCommand("armor").setExecutor(executor);
 		Bukkit.getPluginManager().registerEvents(
 				new fr.ng.global.EventListener(), this);
+		Bukkit.getPluginManager().registerEvents(
+				new fr.ng.global.RainbowArmor(), this);
 	}
 
 	public void onDisable() {
