@@ -22,8 +22,8 @@ public class Main extends JavaPlugin {
 			configlobby.set("slot", 4);
 			slot = 3;
 		}
-		CommandExecutor exempleExecutor = new DisplaymenuCommandExecutor();
-		getCommand("armor").setExecutor(exempleExecutor);
+		CommandExecutor executor = new DisplaymenuCommandExecutor();
+		getCommand("armor").setExecutor(executor);
 		Bukkit.getPluginManager().registerEvents(
 				new fr.ng.global.EventListener(), this);
 	}

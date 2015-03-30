@@ -1,10 +1,18 @@
 package fr.ng.global;
 
+import inventaire.Autres;
+import inventaire.Cuir1;
+import inventaire.Cuir2;
+import inventaire.Cuir3;
+import inventaire.Inventaire;
+import inventaire.Princ;
+
 import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -18,13 +26,18 @@ public class DisplaymenuCommandExecutor implements CommandExecutor {
 	ItemStack armorstand;
 	String ng = GlobalMethods.ng;
 	GlobalMethods gm;
+	Inventaire princ = new Princ();
+	Inventaire autres = new Autres();
+	Inventaire cuir1 = new Cuir1();
+	Inventaire cuir2 = new Cuir2();
+	Inventaire cuir3 = new Cuir3();
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label,
 			String[] args) {
+		Player ps = Bukkit.getServer().getPlayer(sender.getName());
 		if (args.length == 0) {
-			GlobalMethods.openInv(Bukkit.getServer()
-					.getPlayer(sender.getName()), "Princ");
+			princ.openInv(ps);
 		} else {
 			if (sender.hasPermission("nglobby.armor.admin.cmd")) {
 				if (args[0].equalsIgnoreCase("help")) {
@@ -52,23 +65,31 @@ public class DisplaymenuCommandExecutor implements CommandExecutor {
 										+ ChatColor.DARK_GRAY + "Robe");
 								ArrayList<String> desclist = new ArrayList<String>();
 								desclist.add(ChatColor.YELLOW
-										+ "Cliquez ici pour\nouvrir la garde-robe !");
+										+ "Cliquez ici pour ouvrir la garde-robe !");
 								ItemMeta.setLore(desclist);
 								armorstand.setItemMeta(ItemMeta);
 								pInv.setItem(slot, armorstand);
-								sender.sendMessage(ng + "Vous avez donnez à "
-										+ args[1] + " l'item !");
+								sender.sendMessage(ng
+										+ "Vous avez donné l'item  à "
+										+ args[1] + " !");
+								ps.playSound(ps.getLocation(),
+										Sound.SUCCESSFUL_HIT, 1, 1);
 							} else {
 								sender.sendMessage(ng
 										+ "Ce joueur n'est pas en ligne");
+								ps.playSound(ps.getLocation(), Sound.FALL_BIG,
+										1, 1);
 							}
 						} catch (Exception e) {
 							sender.sendMessage(ng
 									+ "Ce joueur n'est pas en ligne");
+							ps.playSound(ps.getLocation(), Sound.FALL_BIG, 1, 1);
 						}
 					} else {
-						GlobalMethods
-								.returnErrorCMD("/armor giveitem [ joueur ]");
+						sender.sendMessage(GlobalMethods
+								.returnErrorCMD("/armor giveitem [ joueur ]"));
+						ps.playSound(ps.getLocation(), Sound.FALL_BIG, 1, 1);
+						;
 					}
 				} else if (args[0].equals("setslot")) {
 					if (args.length == 2) {
@@ -79,23 +100,31 @@ public class DisplaymenuCommandExecutor implements CommandExecutor {
 								sender.sendMessage(ng
 										+ "Vous avez défini le slot en "
 										+ args[1]);
+								ps.playSound(ps.getLocation(),
+										Sound.SUCCESSFUL_HIT, 1, 1);
 							} else {
 								sender.sendMessage(ng
 										+ "Merci de mettre un nombre compris entre 1 et 9");
+								ps.playSound(ps.getLocation(), Sound.FALL_BIG,
+										1, 1);
 							}
 						} catch (Exception e) {
 							sender.sendMessage(ng
 									+ "Veuillez mettre un nombre !");
+							ps.playSound(ps.getLocation(), Sound.FALL_BIG, 1, 1);
 						}
 					} else {
-						GlobalMethods.returnErrorCMD("/armor setslot [ slot ]");
+						sender.sendMessage(GlobalMethods
+								.returnErrorCMD("/armor setslot [ slot ]"));
+						ps.playSound(ps.getLocation(), Sound.FALL_BIG, 1, 1);
 					}
 				}
 			} else {
-				GlobalMethods.returnErrorPerm("nglobby.armor.admin");
+				sender.sendMessage(GlobalMethods
+						.returnErrorPerm("nglobby.armor.admin"));
+				ps.playSound(ps.getLocation(), Sound.FALL_BIG, 1, 1);
 			}
 		}
 		return false;
 	}
-
 }
