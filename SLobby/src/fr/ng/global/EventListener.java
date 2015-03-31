@@ -115,6 +115,8 @@ public class EventListener implements Listener {
 						p.getInventory().setHelmet(itemAir);
 						p.playSound(p.getLocation(), Sound.EXPLODE, 1, 1);
 					} else if (current == Material.AIR) {
+					} else if (current == Material.BARRIER) {
+						p.playSound(p.getLocation(), Sound.FALL_BIG, 1, 1);
 					} else {
 						GlobalMethods.equipArmor(current, p);
 						p.playSound(p.getLocation(), Sound.SPLASH, 1, 1);
@@ -163,6 +165,8 @@ public class EventListener implements Listener {
 					} else if (item.getItemMeta().getDisplayName()
 							.contains("rainbow")) {
 						// à faire !!!
+					} else if (current == Material.BARRIER) {
+						p.playSound(p.getLocation(), Sound.SPLASH, 1, 1);
 					} else {
 						GlobalMethods.equipColoredArmor(current, p, item);
 						p.playSound(p.getLocation(), Sound.SPLASH, 1, 1);
