@@ -27,7 +27,8 @@ public class Main extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(
 				new fr.ng.global.EventListener(), this);
 		Bukkit.getPluginManager().registerEvents(
-				new fr.ng.global.RainbowArmor(), this);
+				new RainbowArmor(this), this);
+		// I try this ?
 	}
 
 	public void onDisable() {

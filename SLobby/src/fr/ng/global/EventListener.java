@@ -163,7 +163,7 @@ public class EventListener implements Listener {
 						p.getInventory().setHelmet(itemAir);
 						p.playSound(p.getLocation(), Sound.EXPLODE, 1, 1);
 					} else if (item.getItemMeta().getDisplayName()
-							.contains("rainbow")) {
+							.contains("color")) {
 						// à faire !!!
 					} else if (current == Material.BARRIER) {
 						p.playSound(p.getLocation(), Sound.SPLASH, 1, 1);

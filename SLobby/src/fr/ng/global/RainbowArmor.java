@@ -7,6 +7,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,8 +18,13 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 public class RainbowArmor implements Listener {
 	Main main;
 
+	public RainbowArmor(Main main) {
+		this.main = main;
+	}
+
 	private ItemStack getColorArmor(Material m, Color c) {
 		ItemStack i = new ItemStack(m, 1);
+		i.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
 		LeatherArmorMeta meta = (LeatherArmorMeta) i.getItemMeta();
 		meta.setColor(c);
 		i.setItemMeta(meta);
@@ -64,9 +70,11 @@ public class RainbowArmor implements Listener {
 											+ ChatColor.GOLD + ""
 											+ ChatColor.BOLD + "color")) {
 				p.getWorld().playSound(p.getLocation(), Sound.SPLASH, 1, 1);
-				Boolean etat = true;
-				if (etat)
-					return;
+				Bukkit.getScheduler().cancelTask(helmet);
+				Bukkit.getScheduler().cancelTask(chestplate);
+				Bukkit.getScheduler().cancelTask(leggings);
+				Bukkit.getScheduler().cancelTask(boots);
+
 				p.getInventory().setHelmet(
 						new ItemStack(Material.LEATHER_HELMET));
 				p.getInventory().setChestplate(
@@ -159,13 +167,8 @@ public class RainbowArmor implements Listener {
 								}
 							}
 						}, 1, 8);
-				Bukkit.getScheduler().cancelTask(helmet);
-				Bukkit.getScheduler().cancelTask(chestplate);
-				Bukkit.getScheduler().cancelTask(leggings);
-				Bukkit.getScheduler().cancelTask(boots);
-			} else {
+
 			}
 		}
 	}
-
 }

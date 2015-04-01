@@ -221,7 +221,7 @@ public class Cuir1 extends Inventaire {
 		inv.setItem(27, item);
 		if (p.hasPermission("ng.armor.bootLeaNor")) {
 			item = transItem(new ItemStack(Material.LEATHER_BOOTS),
-					ChatColor.GRAY + "Bottes normals", ChatColor.YELLOW
+					ChatColor.GRAY + "Bottes normales", ChatColor.YELLOW
 							+ "Cliquez pour mettre des bottes normales !", p);
 		} else {
 			item = errorItem;
