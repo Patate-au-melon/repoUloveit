@@ -35,6 +35,10 @@ public class RainbowArmor implements Listener {
 	public static int chestplate;
 	public static int leggings;
 	public static int boots;
+	public static boolean helmetB;
+	public static boolean chestplateB;
+	public static boolean leggingsB;
+	public static boolean bootsB;
 
 	@EventHandler
 	public void onClick(InventoryClickEvent e) {
@@ -45,9 +49,8 @@ public class RainbowArmor implements Listener {
 						ChatColor.RED + "Armures" + ChatColor.DARK_GRAY
 								+ " en cuir")) {
 			e.setCancelled(true);
-			if (e.getCurrentItem() == null) {
+			if (e.getCurrentItem() == null)
 				return;
-			}
 
 			if (e.getCurrentItem() != null
 					&& e.getCurrentItem().hasItemMeta()
@@ -77,12 +80,16 @@ public class RainbowArmor implements Listener {
 
 				p.getInventory().setHelmet(
 						new ItemStack(Material.LEATHER_HELMET));
+				helmetB = true;
 				p.getInventory().setChestplate(
 						new ItemStack(Material.LEATHER_CHESTPLATE));
+				chestplateB = true;
 				p.getInventory().setLeggings(
 						new ItemStack(Material.LEATHER_LEGGINGS));
+				leggingsB = true;
 				p.getInventory()
 						.setBoots(new ItemStack(Material.LEATHER_BOOTS));
+				bootsB = true;
 
 				p.closeInventory();
 
@@ -91,19 +98,23 @@ public class RainbowArmor implements Listener {
 							private Random r = new Random();
 
 							public void run() {
-								Color c = Color.fromRGB(r.nextInt(255),
-										r.nextInt(255), r.nextInt(255));
+								if (helmetB) {
+									Color c = Color.fromRGB(r.nextInt(255),
+											r.nextInt(255), r.nextInt(255));
 
-								if (p.getInventory().getHelmet() != null
-										&& p.getInventory().getHelmet()
-												.getType() == Material.LEATHER_HELMET) {
-									p.getInventory()
-											.setHelmet(
-													getColorArmor(
-															Material.LEATHER_HELMET,
-															c));
+									if (p.getInventory().getHelmet() != null
+											&& p.getInventory().getHelmet()
+													.getType() == Material.LEATHER_HELMET) {
+										p.getInventory()
+												.setHelmet(
+														getColorArmor(
+																Material.LEATHER_HELMET,
+																c));
+									}
+								} else {
+									Bukkit.getScheduler().cancelTask(helmet);
+									helmetB = true;
 								}
-
 							}
 						}, 1, 8);
 
@@ -112,17 +123,23 @@ public class RainbowArmor implements Listener {
 							private Random r = new Random();
 
 							public void run() {
-								Color c2 = Color.fromRGB(r.nextInt(255),
-										r.nextInt(255), r.nextInt(255));
+								if (chestplateB) {
+									Color c2 = Color.fromRGB(r.nextInt(255),
+											r.nextInt(255), r.nextInt(255));
 
-								if (p.getInventory().getChestplate() != null
-										&& p.getInventory().getChestplate()
-												.getType() == Material.LEATHER_CHESTPLATE) {
-									p.getInventory()
-											.setChestplate(
-													getColorArmor(
-															Material.LEATHER_CHESTPLATE,
-															c2));
+									if (p.getInventory().getChestplate() != null
+											&& p.getInventory().getChestplate()
+													.getType() == Material.LEATHER_CHESTPLATE) {
+										p.getInventory()
+												.setChestplate(
+														getColorArmor(
+																Material.LEATHER_CHESTPLATE,
+																c2));
+									}
+								} else {
+									Bukkit.getScheduler()
+											.cancelTask(chestplate);
+									chestplateB = true;
 								}
 							}
 						}, 1, 8);
@@ -133,16 +150,22 @@ public class RainbowArmor implements Listener {
 
 							@Override
 							public void run() {
-								Color c3 = Color.fromRGB(r.nextInt(255),
-										r.nextInt(255), r.nextInt(255));
+								if (leggingsB) {
+									Color c3 = Color.fromRGB(r.nextInt(255),
+											r.nextInt(255), r.nextInt(255));
 
-								if (p.getInventory().getLeggings() != null
-										&& p.getInventory().getLeggings()
-												.getType() == Material.LEATHER_LEGGINGS) {
-									p.getInventory().setLeggings(
-											getColorArmor(
-													Material.LEATHER_LEGGINGS,
-													c3));
+									if (p.getInventory().getLeggings() != null
+											&& p.getInventory().getLeggings()
+													.getType() == Material.LEATHER_LEGGINGS) {
+										p.getInventory()
+												.setLeggings(
+														getColorArmor(
+																Material.LEATHER_LEGGINGS,
+																c3));
+									}
+								} else {
+									Bukkit.getScheduler().cancelTask(leggings);
+									leggingsB = true;
 								}
 							}
 						}, 1, 8);
@@ -153,21 +176,35 @@ public class RainbowArmor implements Listener {
 
 							@Override
 							public void run() {
-								Color c4 = Color.fromRGB(r.nextInt(255),
-										r.nextInt(255), r.nextInt(255));
+								if (bootsB) {
+									Color c4 = Color.fromRGB(r.nextInt(255),
+											r.nextInt(255), r.nextInt(255));
 
-								if (p.getInventory().getBoots() != null
-										&& p.getInventory().getBoots()
-												.getType() == Material.LEATHER_BOOTS) {
-									p.getInventory().setBoots(
-											getColorArmor(
-													Material.LEATHER_BOOTS,
+									if (p.getInventory().getBoots() != null
+											&& p.getInventory().getBoots()
+													.getType() == Material.LEATHER_BOOTS) {
+										p.getInventory().setBoots(
+												getColorArmor(
+														Material.LEATHER_BOOTS,
 
-													c4));
+														c4));
+									}
+								} else {
+									Bukkit.getScheduler().cancelTask(boots);
+									bootsB = true;
 								}
 							}
 						}, 1, 8);
 
+			} else if (e.getCurrentItem() == null) {
+			} else if (e.getCurrentItem().getType() == Material.LEATHER_HELMET) {
+				helmetB = false;
+			} else if (e.getCurrentItem().getType() == Material.LEATHER_CHESTPLATE) {
+				chestplateB = false;
+			} else if (e.getCurrentItem().getType() == Material.LEATHER_LEGGINGS) {
+				leggingsB = false;
+			} else if (e.getCurrentItem().getType() == Material.LEATHER_BOOTS) {
+				bootsB = false;
 			}
 		}
 	}
