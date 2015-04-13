@@ -1,4 +1,4 @@
-package fr.ng.global;
+package global;
 
 import inventaire.Autres;
 import inventaire.Cuir1;

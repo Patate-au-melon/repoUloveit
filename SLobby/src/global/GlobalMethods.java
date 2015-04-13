@@ -1,4 +1,4 @@
-package fr.ng.global;
+package global;
 
 import java.util.ArrayList;
 

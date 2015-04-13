@@ -1,8 +1,7 @@
-package fr.ng.global;
+package global;
 
 import java.io.File;
 import java.io.IOException;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -25,9 +24,9 @@ public class Main extends JavaPlugin {
 		CommandExecutor executor = new DisplaymenuCommandExecutor();
 		getCommand("armor").setExecutor(executor);
 		Bukkit.getPluginManager().registerEvents(
-				new fr.ng.global.EventListener(), this);
-		Bukkit.getPluginManager().registerEvents(
-				new RainbowArmor(this), this);
+				new global.EventListener(), this);
+		Bukkit.getPluginManager().registerEvents(new RainbowArmor(this), this);
+		RainbowArmor.launchTask(this);
 	}
 
 	public void onDisable() {
